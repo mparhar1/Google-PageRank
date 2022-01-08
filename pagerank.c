@@ -1,8 +1,8 @@
 /*
-  File:             pagerank.c
-  Purpose:          A C-program that calls MATLAB to calculate
-                    the PageRank of a web.txt file.
-  Date:             November 30th, 2021
+ * File:    pagerank.c
+ * Purpose: A C-program that calls MATLAB to calculate
+ *          the PageRank of a web.txt file.
+ * Date:    November 30th, 2021
 */
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -184,7 +184,7 @@ int main(void) {
     return 0; // Because main returns 0 for successful completion
 }
 
-/* Returns a 1-D Array Retrieved from web.txt (Inspired by Lab 4 Take-Home) */
+/* Returns a 1-D Array Retrieved from web.txt */
 double* parseFile(FILE* file, int dimension) {
     char line_buffer[BUFSIZE];
     int row = 0;
@@ -208,7 +208,7 @@ double* parseFile(FILE* file, int dimension) {
     return matrix;
 }
 
-/* Gets the Dimension from the web.txt file (Code Inspired by Lab 4 Take-Home */
+/* Gets the Dimension from the web.txt file */
 int getSize(FILE* file) {
     int  dimension = 0;
     char line_buffer[BUFSIZE];
