@@ -1,5 +1,7 @@
+% Example Connectivity Matrix - Can be Changed to Any Dimension
 ConnectivityMatrix = [ 0 1 0 1 0; 1 0 0 1 1; 1 0 0 1 0; 1 1 0 0 1; 1 0 0 0 0];
 
+% The Rest of the Code Implements the PageRank Algorithm
 [rows, columns] = size(ConnectivityMatrix);
 
 dimension = size(ConnectivityMatrix, 1);
@@ -26,4 +28,5 @@ PageRank = ones(dimension, 1);
 
 for i = 1:100; PageRank = TransitionMatrix * PageRank; end
 
+% The PageRank Vector Stores the Normalized Pagerank Results for the Website
 PageRank = PageRank / sum(PageRank);
