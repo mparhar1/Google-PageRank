@@ -23,8 +23,8 @@ int getSize(FILE* file);
 /* Main Function */
 int main(void) {
     /* Variables */
-    Engine* ep = NULL; // A pointer to a MATLAB engine object
-    mxArray* inputMat = NULL, * result = NULL; // mxArray is the fundamental type underlying MATLAB data
+    Engine* ep = NULL;
+    mxArray* inputMat = NULL, * result = NULL;
     double* connectivityMat = NULL;
     int dimension = 0;
     char buffer[BUFSIZE + 1];
@@ -60,7 +60,7 @@ int main(void) {
     if (engPutVariable(ep, "inputMat", inputMat)) {
         fprintf(stderr, "\nCannot write the connectivity matrix to MATLAB \n");
         system("pause");
-        exit(1); // Same as return 1;
+        exit(1);
     }
 
     /* Transposes the Matrix to Convert from Row-Major Order to Column-Major Order */
@@ -167,7 +167,7 @@ int main(void) {
     buffer[BUFSIZE] = '\0';
 
     /* Records a List of All Current MATLAB Variables into Buffer and then Prints */
-    engEvalString(ep, "whos"); // whos is a handy MATLAB command that generates a list of all current variables
+    engEvalString(ep, "whos"); // whos generates a list of all current variables
     printf("%s\n", buffer);
 
     /* Memory Management */
@@ -180,8 +180,8 @@ int main(void) {
     }
 
     /* End of Function */
-    system("pause"); // So the terminal window remains open long enough for you to read it
-    return 0; // Because main returns 0 for successful completion
+    system("pause"); 
+    return 0;
 }
 
 /* Returns a 1-D Array Retrieved from web.txt */
